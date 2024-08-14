@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p>{{ data.message }}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">{{ (!data.confirm) ? 'Cancel' : 'OK' }}</button>
+  <button *ngIf="!data.confirm" mat-button color="warn" (click)="onConfirm()">Confirm</button>
+</div>

@@ -1,0 +1,20 @@
+<div class="blog-form-container">
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="isFieldInvalid('username')">Username is required</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Text</mat-label>
+        <textarea matInput formControlName="text"></textarea>
+        <mat-error *ngIf="isFieldInvalid('text')">Text is required</mat-error>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">{{ isEditMode ? 'Update' : 'Submit' }}</button>
+        <button mat-raised-button color="accent" type="button" (click)="goBack()">Back</button>
+      </div>
+    </form>
+  </div>
+  

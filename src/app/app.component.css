@@ -1,0 +1,67 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  mat-sidenav {
+    width: 130px;
+  }
+  
+  mat-sidenav-container {
+    height: 100%;
+  }
+  
+  mat-sidenav-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .content {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 20px;
+  }
+  
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* styles.css or app.component.css */
+
+.active-link {
+  background-color: #3f51b5; /* Example active link color */
+  color: white;
+  border-radius: -25px;
+}
+
+/* styles.css or app.component.css */
+
+.mat-list-item {
+  padding: 10px 20px;
+}
+
+.mat-list-item.active-link {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.mat-list-item.active-link:hover {
+  background-color: #303f9f; /* Darker shade on hover */
+}
+.mat-toolbar {
+  font-size: 24px; /* Adjust this value as needed */
+  line-height: 64px; /* Adjust this value as needed */
+}
+
+.mat-toolbar .mat-toolbar-row, .mat-toolbar .mat-toolbar-single-row {
+  height: 64px; /* Adjust this value as needed */
+}
+
+.sticky-header {
+  font-size: 24px;
+  line-height: 64px;
+}
+
