@@ -21,16 +21,16 @@ export class BlogsListComponent implements OnInit, AfterViewInit {
   showDeleteMessage = false;
   pageSize = 5;
   pageNumber = 1;
-  totalBlogs = 0;
+  totalBlogs:any;
   searchTerm: string = '';
   sortBy: string = 'date';
   sortDirection: 'asc' | 'desc' = 'desc';
   loading: boolean = false;
   private searchSubject: Subject<string> = new Subject();
-  highlightedRow: Blog | null = null;
-  clickTimeout: any;
+  // highlightedRow: Blog | null = null;
+  // clickTimeout: any;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator, { read: true }) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private blogService: BlogService, private dialog: MatDialog, private router: Router) {
@@ -70,6 +70,12 @@ export class BlogsListComponent implements OnInit, AfterViewInit {
         this.totalBlogs = data.data.totalCount;
         this.dataSource.data = this.blogs;
         this.loading = false;
+
+        if (this.paginator) {
+          this.paginator.length = this.totalBlogs; // Set the total count
+          this.paginator.pageIndex = this.pageNumber - 1; // Set the current page index
+          this.paginator.pageSize = this.pageSize; // Set the page size
+        }
       },
       error => {
         console.error('Error fetching blogs:', error);

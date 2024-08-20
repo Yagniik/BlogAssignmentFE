@@ -33,12 +33,13 @@
         </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"  [class.highlighted-row]="highlightedRow === row"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
     </div>
   
     <mat-paginator class="paginator-container sticky-paginator" [length]="totalBlogs" [pageSize]="pageSize"
       [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)">
     </mat-paginator>
+    
   </div>
   

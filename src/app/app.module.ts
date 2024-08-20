@@ -22,7 +22,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-// import { BlogDitailPopupComponent } from './shard/blog-ditail-popup/blog-ditail-popup.component';
 import { AlertDialogComponent } from './shard/alert-dialog/alert-dialog.component';
 
 @NgModule({
@@ -30,14 +29,13 @@ import { AlertDialogComponent } from './shard/alert-dialog/alert-dialog.componen
     AppComponent,
     AddBlogComponent,
     BlogsListComponent,
-    // BlogDitailPopupComponent,
     AlertDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule, // Add FormsModule here
+    FormsModule,
     HttpClientModule,
     MatInputModule,
     MatButtonModule,
